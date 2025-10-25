@@ -152,7 +152,10 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ---
 
 ## 🛠️ API Overview
-**CustomerMS**
+
+---
+
+### CustomerMS
 
     GET	/api/customers/{customerId}
 ->	Get customer by ID
@@ -172,9 +175,9 @@ AccountMS: http://localhost:8084/swagger-ui.html
     GET	/api/customers/all
 ->	Get all customers
 
+---
 
-
-**KYCDocumentMS**
+### KYCDocumentMS
 
     POST	/api/kyc/upload-all
 ->	Upload PAN, Aadhaar, and Photo
@@ -200,9 +203,9 @@ AccountMS: http://localhost:8084/swagger-ui.html
     GET	/api/kyc/pending
 ->	Get all pending KYC documents
 
+---
 
-
-**AccountMS**
+### AccountMS
 
     POST	/api/accounts/create
 ->	Create a new account for a customer
