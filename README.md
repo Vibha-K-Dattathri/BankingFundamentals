@@ -105,32 +105,32 @@ CREATE TABLE customers2 (
 
 **-- KYC Documents table**
 
-CREATE TABLE kyc_documents2 (
-  doc_id        VARCHAR2(36) PRIMARY KEY,
-  
-  customer_id   VARCHAR2(36),
-  
-  doc_type      VARCHAR2(20) NOT NULL,
-  
-  file_name     VARCHAR2(255),
-  
-  file_base64   CLOB,
-  
-  status        VARCHAR2(20) DEFAULT 'PENDING',
-  
-  admin_comment VARCHAR2(2000),
-  
-  uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,
-  
-  CONSTRAINT fk_customer2
-  
-      FOREIGN KEY (customer_id)
+    CREATE TABLE kyc_documents2 (
+      doc_id        VARCHAR2(36) PRIMARY KEY,
       
-      REFERENCES customers2(customer_id)
+      customer_id   VARCHAR2(36),
       
-      ON DELETE CASCADE
+      doc_type      VARCHAR2(20) NOT NULL,
       
-);
+      file_name     VARCHAR2(255),
+      
+      file_base64   CLOB,
+      
+      status        VARCHAR2(20) DEFAULT 'PENDING',
+      
+      admin_comment VARCHAR2(2000),
+      
+      uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,
+      
+      CONSTRAINT fk_customer2
+      
+          FOREIGN KEY (customer_id)
+          
+          REFERENCES customers2(customer_id)
+          
+          ON DELETE CASCADE
+          
+    );
 
 **-- Accounts table**
 
