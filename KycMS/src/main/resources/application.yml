@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: KycDocument
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: SYSTEM
+    password: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+  servlet:
+    multipart:
+      max-file-size: 100MB        # ✅ Fix for 413 error
+      max-request-size: 100MB     # ✅ Fix for 413 error
+      file-size-threshold: 2MB    # Optional: start writing to disk after 2MB
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4567/eureka/
+    fetch-registry: true
+    register-with-eureka: true

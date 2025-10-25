@@ -1,0 +1,39 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: AccountMS
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: none   # Use 'none' if tables already exist
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}       # Set in environment variables
+    password: ${EMAIL_PASSWORD}       # Gmail App Password recommended
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+      debug: true   # Shows email sending logs
+
+# Eureka Client Configuration
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:4567/eureka/
