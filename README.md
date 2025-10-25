@@ -60,6 +60,7 @@ flowchart TD
     Customer --> DB
     KYC --> DB
     Account --> DB
+```
 
 ---
 
@@ -143,7 +144,9 @@ KYCDocumentMS: http://localhost:8083/swagger-ui.html
 
 AccountMS: http://localhost:8084/swagger-ui.html
 
-🛠️ API Overview
+---
+
+## 🛠️ API Overview
 CustomerMS
 Method	Endpoint	Description
 GET	/api/customers/{customerId}	Get customer by ID
@@ -172,7 +175,9 @@ GET	/api/accounts/customer/{customerId}	Get account of a customer
 GET	/api/accounts/all	Get all accounts
 📝 Contributing
 
-Fork the repository.
+---
+
+## Fork the repository.
 
 Create a feature branch (git checkout -b feature/YourFeature).
 
@@ -182,7 +187,9 @@ Push to the branch (git push origin feature/YourFeature).
 
 Create a Pull Request.
 
-📄 License
+---
+
+## 📄 License
 
 This project is licensed under the MIT License.
 
