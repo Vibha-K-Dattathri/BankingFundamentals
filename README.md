@@ -80,15 +80,15 @@ Run the SQL scripts to create the required tables:
 
 -- Customers table
 CREATE TABLE customers2 (
-  customer_id   VARCHAR2(36) PRIMARY KEY,
-  full_name     VARCHAR2(200) NOT NULL,
-  email         VARCHAR2(150) NOT NULL,
-  phone         VARCHAR2(20) NOT NULL,
-  dob           DATE NOT NULL,
-  address       VARCHAR2(4000),
-  pan           VARCHAR2(10) NOT NULL,
-  aadhaar       VARCHAR2(12) NOT NULL,
-  created_at    TIMESTAMP DEFAULT SYSTIMESTAMP
+  customer_id   VARCHAR2(36) PRIMARY KEY,<br>
+  full_name     VARCHAR2(200) NOT NULL,<br>
+  email         VARCHAR2(150) NOT NULL,<br>
+  phone         VARCHAR2(20) NOT NULL,<br>
+  dob           DATE NOT NULL,<br>
+  address       VARCHAR2(4000),<br>
+  pan           VARCHAR2(10) NOT NULL,<br>
+  aadhaar       VARCHAR2(12) NOT NULL,<br>
+  created_at    TIMESTAMP DEFAULT SYSTIMESTAMP<br>
 );
 
 -- KYC Documents table
