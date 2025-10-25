@@ -68,17 +68,17 @@ flowchart TD
 
 Follow these steps to run the project locally:
 
-1. Clone the repository
+**1. Clone the repository**
 git clone <repo-url>
 cd banking-fundamentals
 
-2. Setup Oracle Database
+**2. Setup Oracle Database**
 
 Install Oracle 11g and start the service.
 
 Run the SQL scripts to create the required tables:
 
--- Customers table
+**-- Customers table**
 CREATE TABLE customers2 (
   customer_id   VARCHAR2(36) PRIMARY KEY,<br>
   full_name     VARCHAR2(200) NOT NULL,<br>
@@ -91,7 +91,7 @@ CREATE TABLE customers2 (
   created_at    TIMESTAMP DEFAULT SYSTIMESTAMP<br>
 );
 
--- KYC Documents table
+**-- KYC Documents table**
 CREATE TABLE kyc_documents2 (
   doc_id        VARCHAR2(36) PRIMARY KEY,<br>
   customer_id   VARCHAR2(36),<br>
@@ -107,7 +107,7 @@ CREATE TABLE kyc_documents2 (
       ON DELETE CASCADE<br>
 );
 
--- Accounts table
+**-- Accounts table**
 CREATE TABLE accounts2 (
     account_id        VARCHAR2(36) PRIMARY KEY,<br>
     customer_id       VARCHAR2(36) NOT NULL,<br>
@@ -122,11 +122,11 @@ CREATE TABLE accounts2 (
     CONSTRAINT uq_customer_account_type UNIQUE (customer_id, account_type)<br>
 );
 
-3. Start the Eureka Registry
+**3. Start the Eureka Registry**
 cd RegistryServer
 mvn spring-boot:run
 
-4. Start the Microservices
+**4. Start the Microservices**
 
 Start each service (order doesn’t matter if Eureka is running):
 
@@ -136,7 +136,7 @@ KYCDocumentMS: port 8083
 
 AccountMS: port 8084
 
-5. Access Swagger UI
+**5. Access Swagger UI**
 
 CustomerMS: http://localhost:8085/swagger-ui.html
 
@@ -147,37 +147,37 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ---
 
 ## 🛠️ API Overview
-CustomerMS
-Method	Endpoint	Description
-GET	/api/customers/{customerId}	Get customer by ID<br>
-PUT	/api/customers/{customerId}	Update customer details<br>
-PATCH	/api/customers/{customerId}	Partially update customer<br>
-DELETE	/api/customers/{customerId}	Delete customer<br>
-POST	/api/customers/register	Register a new customer<br>
-GET	/api/customers	Get all customers<br>
-KYCDocumentMS
-Method	Endpoint	Description
-POST	/api/kyc/upload-all	Upload PAN, Aadhaar, and Photo
-POST	/api/kyc/reupload/{docId}	Reupload a rejected KYC document
-POST	/api/kyc/verify/{docId}	Approve or reject a KYC document
-GET	/api/kyc/{docId}	Get details of a specific KYC document
-GET	/api/kyc/view/{docId}	Download/view KYC document as file
-GET	/api/kyc/view/customer/{customerId}	View all documents uploaded by a customer
-GET	/api/kyc/status/{customerId}	Get overall KYC status
-GET	/api/kyc/pending	Get all pending KYC documents
-AccountMS
-Method	Endpoint	Description
-POST	/api/accounts/create	Create a new account for a customer
-PUT	/api/accounts/{accountId}	Fully update account details
-PATCH	/api/accounts/{accountId}	Partially update account
-DELETE	/api/accounts/{accountId}	Delete an account
-GET	/api/accounts/customer/{customerId}	Get account of a customer
-GET	/api/accounts/all	Get all accounts
-📝 Contributing
+CustomerMS<br>
+GET	/api/customers/{customerId} ->	Get customer by ID<br>
+PUT	/api/customers/{customerId} ->	Update customer details<br>
+PATCH	/api/customers/{customerId} ->	Partially update customer<br>
+DELETE	/api/customers/{customerId} ->	Delete customer<br>
+POST	/api/customers/register ->	Register a new customer<br>
+GET	/api/customers/all ->	Get all customers<br>
+
+KYCDocumentMS<br>
+POST	/api/kyc/upload-all ->	Upload PAN, Aadhaar, and Photo<br>
+POST	/api/kyc/reupload/{docId} ->	Reupload a rejected KYC document<br>
+POST	/api/kyc/verify/{docId} ->	Approve or reject a KYC document<br>
+GET	/api/kyc/{docId} ->	Get details of a specific KYC document<br>
+GET	/api/kyc/view/{docId} ->	Download/view KYC document as file<br>
+GET	/api/kyc/view/customer/{customerId} ->	View all documents uploaded by a customer<br>
+GET	/api/kyc/status/{customerId} ->	Get overall KYC status<br>
+GET	/api/kyc/pending ->	Get all pending KYC documents<br>
+
+AccountMS<br>
+POST	/api/accounts/create ->	Create a new account for a customer<br>
+PUT	/api/accounts/{accountId} ->	Fully update account details<br>
+PATCH	/api/accounts/{accountId} ->	Partially update account<br>
+DELETE	/api/accounts/{accountId} ->	Delete an account<br>
+GET	/api/accounts/customer/{customerId} ->	Get account of a customer<br>
+GET	/api/accounts/all ->	Get all accounts<br>
 
 ---
 
-## Fork the repository.
+## 📝 Contributing
+
+Fork the repository.
 
 Create a feature branch (git checkout -b feature/YourFeature).
 
@@ -193,7 +193,9 @@ Create a Pull Request.
 
 This project is licensed under the MIT License.
 
-💡 Notes
+---
+
+## 💡 Notes
 
 Ensure the Oracle DB is running before starting microservices.
 
