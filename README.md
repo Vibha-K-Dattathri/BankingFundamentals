@@ -69,7 +69,9 @@ flowchart TD
 Follow these steps to run the project locally:
 
 **1. Clone the repository**
+
 git clone <repo-url>
+
 cd banking-fundamentals
 
 **2. Setup Oracle Database**
@@ -125,8 +127,10 @@ CREATE TABLE accounts2 (
     CONSTRAINT uq_customer_account_type UNIQUE (customer_id, account_type)<br>
 );
 
-**3. Start the Eureka Registry**<br>
+**3. Start the Eureka Registry**
+
 cd RegistryServer
+
 mvn spring-boot:run
 
 **4. Start the Microservices**
@@ -150,8 +154,10 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ---
 
 ## 🛠️ API Overview
-**CustomerMS**<br>
-GET	/api/customers/{customerId} ->	Get customer by ID<br>
+**CustomerMS**
+
+GET	/api/customers/{customerId} ->	Get customer by ID
+
 PUT	/api/customers/{customerId} ->	Update customer details<br>
 PATCH	/api/customers/{customerId} ->	Partially update customer<br>
 DELETE	/api/customers/{customerId} ->	Delete customer<br>
