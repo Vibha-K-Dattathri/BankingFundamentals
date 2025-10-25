@@ -79,6 +79,7 @@ Install Oracle 11g and start the service.
 Run the SQL scripts to create the required tables:
 
 **-- Customers table**
+
 CREATE TABLE customers2 (
   customer_id   VARCHAR2(36) PRIMARY KEY,<br>
   full_name     VARCHAR2(200) NOT NULL,<br>
@@ -92,6 +93,7 @@ CREATE TABLE customers2 (
 );
 
 **-- KYC Documents table**
+
 CREATE TABLE kyc_documents2 (
   doc_id        VARCHAR2(36) PRIMARY KEY,<br>
   customer_id   VARCHAR2(36),<br>
@@ -108,6 +110,7 @@ CREATE TABLE kyc_documents2 (
 );
 
 **-- Accounts table**
+
 CREATE TABLE accounts2 (
     account_id        VARCHAR2(36) PRIMARY KEY,<br>
     customer_id       VARCHAR2(36) NOT NULL,<br>
