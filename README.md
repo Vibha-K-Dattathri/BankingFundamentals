@@ -107,7 +107,6 @@ CREATE TABLE customers2 (
 
     CREATE TABLE kyc_documents2 (
       doc_id        VARCHAR2(36) PRIMARY KEY,
-      
       customer_id   VARCHAR2(36),
       
       doc_type      VARCHAR2(20) NOT NULL,
