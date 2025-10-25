@@ -173,6 +173,7 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ->	Get all customers
 
 
+
 **KYCDocumentMS**
 
     POST	/api/kyc/upload-all
@@ -198,6 +199,7 @@ AccountMS: http://localhost:8084/swagger-ui.html
     
     GET	/api/kyc/pending
 ->	Get all pending KYC documents
+
 
 
 **AccountMS**
