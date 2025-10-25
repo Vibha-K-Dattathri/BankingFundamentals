@@ -125,7 +125,7 @@ CREATE TABLE accounts2 (
     CONSTRAINT uq_customer_account_type UNIQUE (customer_id, account_type)<br>
 );
 
-**3. Start the Eureka Registry**
+**3. Start the Eureka Registry**<br>
 cd RegistryServer
 mvn spring-boot:run
 
