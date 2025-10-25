@@ -93,33 +93,33 @@ CREATE TABLE customers2 (
 
 -- KYC Documents table
 CREATE TABLE kyc_documents2 (
-  doc_id        VARCHAR2(36) PRIMARY KEY,
-  customer_id   VARCHAR2(36),
-  doc_type      VARCHAR2(20) NOT NULL,
-  file_name     VARCHAR2(255),
-  file_base64   CLOB,
-  status        VARCHAR2(20) DEFAULT 'PENDING',
-  admin_comment VARCHAR2(2000),
-  uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,
-  CONSTRAINT fk_customer2
-      FOREIGN KEY (customer_id)
-      REFERENCES customers2(customer_id)
-      ON DELETE CASCADE
+  doc_id        VARCHAR2(36) PRIMARY KEY,<br>
+  customer_id   VARCHAR2(36),<br>
+  doc_type      VARCHAR2(20) NOT NULL,<br>
+  file_name     VARCHAR2(255),<br>
+  file_base64   CLOB,<br>
+  status        VARCHAR2(20) DEFAULT 'PENDING',<br>
+  admin_comment VARCHAR2(2000),<br>
+  uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,<br>
+  CONSTRAINT fk_customer2<br>
+      FOREIGN KEY (customer_id)<br>
+      REFERENCES customers2(customer_id)<br>
+      ON DELETE CASCADE<br>
 );
 
 -- Accounts table
 CREATE TABLE accounts2 (
-    account_id        VARCHAR2(36) PRIMARY KEY,
-    customer_id       VARCHAR2(36) NOT NULL,
-    account_number    VARCHAR2(12) UNIQUE NOT NULL,
-    account_type      VARCHAR2(20) NOT NULL,
-    account_status    VARCHAR2(20) DEFAULT 'ACTIVE',
-    account_balance   NUMBER(15,2) DEFAULT 0 NOT NULL,
-    created_at        TIMESTAMP DEFAULT SYSTIMESTAMP,
-    CONSTRAINT fk_customers2 FOREIGN KEY (customer_id)
-        REFERENCES customers2(customer_id)
-        ON DELETE CASCADE,
-    CONSTRAINT uq_customer_account_type UNIQUE (customer_id, account_type)
+    account_id        VARCHAR2(36) PRIMARY KEY,<br>
+    customer_id       VARCHAR2(36) NOT NULL,<br>
+    account_number    VARCHAR2(12) UNIQUE NOT NULL,<br>
+    account_type      VARCHAR2(20) NOT NULL,<br>
+    account_status    VARCHAR2(20) DEFAULT 'ACTIVE',<br>
+    account_balance   NUMBER(15,2) DEFAULT 0 NOT NULL,<br>
+    created_at        TIMESTAMP DEFAULT SYSTIMESTAMP,<br>
+    CONSTRAINT fk_customers2 FOREIGN KEY (customer_id)<br>
+        REFERENCES customers2(customer_id)<br>
+        ON DELETE CASCADE,<br>
+    CONSTRAINT uq_customer_account_type UNIQUE (customer_id, account_type)<br>
 );
 
 3. Start the Eureka Registry
@@ -149,12 +149,12 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ## 🛠️ API Overview
 CustomerMS
 Method	Endpoint	Description
-GET	/api/customers/{customerId}	Get customer by ID
-PUT	/api/customers/{customerId}	Update customer details
-PATCH	/api/customers/{customerId}	Partially update customer
-DELETE	/api/customers/{customerId}	Delete customer
-POST	/api/customers/register	Register a new customer
-GET	/api/customers	Get all customers
+GET	/api/customers/{customerId}	Get customer by ID<br>
+PUT	/api/customers/{customerId}	Update customer details<br>
+PATCH	/api/customers/{customerId}	Partially update customer<br>
+DELETE	/api/customers/{customerId}	Delete customer<br>
+POST	/api/customers/register	Register a new customer<br>
+GET	/api/customers	Get all customers<br>
 KYCDocumentMS
 Method	Endpoint	Description
 POST	/api/kyc/upload-all	Upload PAN, Aadhaar, and Photo
