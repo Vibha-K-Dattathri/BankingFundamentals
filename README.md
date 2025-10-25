@@ -150,7 +150,7 @@ AccountMS: http://localhost:8084/swagger-ui.html
 ---
 
 ## 🛠️ API Overview
-CustomerMS<br>
+**CustomerMS**<br>
 GET	/api/customers/{customerId} ->	Get customer by ID<br>
 PUT	/api/customers/{customerId} ->	Update customer details<br>
 PATCH	/api/customers/{customerId} ->	Partially update customer<br>
@@ -158,7 +158,7 @@ DELETE	/api/customers/{customerId} ->	Delete customer<br>
 POST	/api/customers/register ->	Register a new customer<br>
 GET	/api/customers/all ->	Get all customers<br>
 
-KYCDocumentMS<br>
+**KYCDocumentMS**<br>
 POST	/api/kyc/upload-all ->	Upload PAN, Aadhaar, and Photo<br>
 POST	/api/kyc/reupload/{docId} ->	Reupload a rejected KYC document<br>
 POST	/api/kyc/verify/{docId} ->	Approve or reject a KYC document<br>
@@ -168,7 +168,7 @@ GET	/api/kyc/view/customer/{customerId} ->	View all documents uploaded by a cust
 GET	/api/kyc/status/{customerId} ->	Get overall KYC status<br>
 GET	/api/kyc/pending ->	Get all pending KYC documents<br>
 
-AccountMS<br>
+**AccountMS**<br>
 POST	/api/accounts/create ->	Create a new account for a customer<br>
 PUT	/api/accounts/{accountId} ->	Fully update account details<br>
 PATCH	/api/accounts/{accountId} ->	Partially update account<br>
