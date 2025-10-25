@@ -160,47 +160,65 @@ AccountMS: http://localhost:8084/swagger-ui.html
     PUT	/api/customers/{customerId}
 ->	Update customer details
 
-PATCH	/api/customers/{customerId} ->	Partially update customer
-
-DELETE	/api/customers/{customerId} ->	Delete customer
-
-POST	/api/customers/register ->	Register a new customer
-
-GET	/api/customers/all ->	Get all customers
+    PATCH	/api/customers/{customerId}
+->	Partially update customer
+    
+    DELETE	/api/customers/{customerId}
+->	Delete customer
+    
+    POST	/api/customers/register
+->	Register a new customer
+    
+    GET	/api/customers/all
+->	Get all customers
 
 
 **KYCDocumentMS**
 
-POST	/api/kyc/upload-all ->	Upload PAN, Aadhaar, and Photo
-
-POST	/api/kyc/reupload/{docId} ->	Reupload a rejected KYC document
-
-POST	/api/kyc/verify/{docId} ->	Approve or reject a KYC document
-
-GET	/api/kyc/{docId} ->	Get details of a specific KYC document
-
-GET	/api/kyc/view/{docId} ->	Download/view KYC document as file
-
-GET	/api/kyc/view/customer/{customerId} ->	View all documents uploaded by a customer
-
-GET	/api/kyc/status/{customerId} ->	Get overall KYC status
-
-GET	/api/kyc/pending ->	Get all pending KYC documents
+    POST	/api/kyc/upload-all
+->	Upload PAN, Aadhaar, and Photo
+    
+    POST	/api/kyc/reupload/{docId}
+->	Reupload a rejected KYC document
+    
+    POST	/api/kyc/verify/{docId}
+->	Approve or reject a KYC document
+    
+    GET	/api/kyc/{docId}
+->	Get details of a specific KYC document
+    
+    GET	/api/kyc/view/{docId}
+->	Download/view KYC document as file
+    
+    GET	/api/kyc/view/customer/{customerId}
+->	View all documents uploaded by a customer
+    
+    GET	/api/kyc/status/{customerId}
+->	Get overall KYC status
+    
+    GET	/api/kyc/pending
+->	Get all pending KYC documents
 
 
 **AccountMS**
 
-POST	/api/accounts/create ->	Create a new account for a customer
-
-PUT	/api/accounts/{accountId} ->	Fully update account details
-
-PATCH	/api/accounts/{accountId} ->	Partially update account
-
-DELETE	/api/accounts/{accountId} ->	Delete an account
-
-GET	/api/accounts/customer/{customerId} ->	Get account of a customer
-
-GET	/api/accounts/all ->	Get all accounts
+    POST	/api/accounts/create
+->	Create a new account for a customer
+    
+    PUT	/api/accounts/{accountId}
+->	Fully update account details
+    
+    PATCH	/api/accounts/{accountId}
+->	Partially update account
+    
+    DELETE	/api/accounts/{accountId}
+->	Delete an account
+    
+    GET	/api/accounts/customer/{customerId}
+->	Get account of a customer
+    
+    GET	/api/accounts/all
+->	Get all accounts
 
 
 ---
