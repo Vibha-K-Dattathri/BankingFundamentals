@@ -83,32 +83,53 @@ Run the SQL scripts to create the required tables:
 **-- Customers table**
 
 CREATE TABLE customers2 (
-  customer_id   VARCHAR2(36) PRIMARY KEY,<br>
-  full_name     VARCHAR2(200) NOT NULL,<br>
-  email         VARCHAR2(150) NOT NULL,<br>
-  phone         VARCHAR2(20) NOT NULL,<br>
-  dob           DATE NOT NULL,<br>
-  address       VARCHAR2(4000),<br>
-  pan           VARCHAR2(10) NOT NULL,<br>
-  aadhaar       VARCHAR2(12) NOT NULL,<br>
-  created_at    TIMESTAMP DEFAULT SYSTIMESTAMP<br>
+  customer_id   VARCHAR2(36) PRIMARY KEY,
+  
+  full_name     VARCHAR2(200) NOT NULL,
+  
+  email         VARCHAR2(150) NOT NULL,
+  
+  phone         VARCHAR2(20) NOT NULL,
+  
+  dob           DATE NOT NULL,
+  
+  address       VARCHAR2(4000),
+  
+  pan           VARCHAR2(10) NOT NULL,
+  
+  aadhaar       VARCHAR2(12) NOT NULL,
+  
+  created_at    TIMESTAMP DEFAULT SYSTIMESTAMP
+  
 );
 
 **-- KYC Documents table**
 
 CREATE TABLE kyc_documents2 (
-  doc_id        VARCHAR2(36) PRIMARY KEY,<br>
-  customer_id   VARCHAR2(36),<br>
-  doc_type      VARCHAR2(20) NOT NULL,<br>
-  file_name     VARCHAR2(255),<br>
-  file_base64   CLOB,<br>
-  status        VARCHAR2(20) DEFAULT 'PENDING',<br>
-  admin_comment VARCHAR2(2000),<br>
-  uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,<br>
-  CONSTRAINT fk_customer2<br>
-      FOREIGN KEY (customer_id)<br>
-      REFERENCES customers2(customer_id)<br>
-      ON DELETE CASCADE<br>
+  doc_id        VARCHAR2(36) PRIMARY KEY,
+  
+  customer_id   VARCHAR2(36),
+  
+  doc_type      VARCHAR2(20) NOT NULL,
+  
+  file_name     VARCHAR2(255),
+  
+  file_base64   CLOB,
+  
+  status        VARCHAR2(20) DEFAULT 'PENDING',
+  
+  admin_comment VARCHAR2(2000),
+  
+  uploaded_at   TIMESTAMP DEFAULT SYSTIMESTAMP,
+  
+  CONSTRAINT fk_customer2
+  
+      FOREIGN KEY (customer_id)
+      
+      REFERENCES customers2(customer_id)
+      
+      ON DELETE CASCADE
+      
 );
 
 **-- Accounts table**
